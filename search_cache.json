@@ -1,0 +1,46 @@
+{
+  "Computacao Quantica ?::arxiv|ieee|pubmed|scielo|semantic_scholar|wikipedia::3": {
+    "_ts": "2025-10-13T23:30:02.930804",
+    "value": [
+      {
+        "source": "Semantic Scholar",
+        "title": "Análise de Redes Neurais para CRISPR: Uma Abordagem com Computação Quântica",
+        "url": "https://www.semanticscholar.org/paper/edf8db014cbc965b38062a2844879ca3c54c7e95",
+        "abstract": "O sistema CRISPR transformou a biotecnologia ao possibilitar a manipulação precisa do DNA e avançar a compreensão de distúrbios genéticos. No entanto, as complexas interações entre o DNA e o CRISPR continuam a representar desafios significativos, exigindo processamento de alta performance. Este estudo propõe uma abordagem que integra tecnologia quântica, algoritmos de aprendizado de máquina e CRISPR para lidar com esses desafios. A análise foca na relação entre a dependência do gene CRISPR e o número de cópias de genes repetidos para prever a dependência genética e avaliar o impacto dos experimentos CRISPR. Embora alguns modelos tenham alcançado valores de R2 negativos, esses resultados destacam a complexidade do problema e as oportunidades para melhorias futuras. Este estudo também avalia a viabilidade de redes neurais híbridas quânticas para problemas de regressão, mostrando a computação quântica como uma solução para superar os desafios de HPC em biotecnologia e análise de dados em larga escala.",
+        "authors": [
+          "Marcus Navarro Gabrich",
+          "H.C.F. Freitas",
+          "M. A. Souza"
+        ]
+      },
+      {
+        "source": "Semantic Scholar",
+        "title": "HybriD-GM: Um Modelo Paralelo para Computação Quântica direcionado às Arquiteturas Híbridas",
+        "url": "https://www.semanticscholar.org/paper/81416cbd5e03ad7a0047a39adcf16541005529a2",
+        "abstract": "This paper has as its primary objective to introduce the the HybriD-GM model conception, as well as extend the D-GM environment, providing efficient parallel executions for quantum computing simulations, targeted to hybrid architectures considering both CPU and GPU. By managing projection operators over quantum structures, and exploring coalescing memory access patterns, the HybriD-GM model enables the granularity control, optimizing hardware resources in distributed computations organized as tree data-structures. In the HybriD-GM evaluation, simulations of Shor’s and Grover’s algorithms achieve significant performance improvements in comparison to the D-GM previous version and to the LIQUi|⟩ and ProjectQ simulators.",
+        "authors": [
+          "Anderson Avila",
+          "Bruno Moura",
+          "R. Bastos",
+          "H. Santos",
+          "Giancarlo Lucca",
+          "A. Cruz",
+          "Samuel Xavier-de-Souza",
+          "Adenauer C. Yamin",
+          "R. Reiser"
+        ]
+      },
+      {
+        "source": "Semantic Scholar",
+        "title": "Arquitetura para sistema de computação quântica distribuída multi-QPU com particionamento de circuitos",
+        "url": "https://www.semanticscholar.org/paper/f72d3199b946cf4e414e9a86ff3a94e00daf459a",
+        "abstract": "É consenso que a distribuição de circuitos quânticos entre agentes de processamento é uma abordagem viável para se obter maior escalabilidade com as tecnologias de hardware atuais, de dispositivos ruidosos de escala intermediária. Assim, novas arquitetura de computadores quânticos com múltiplas unidades de processamento devem considerar etapas adicionais de particionamento de circuitos, com a geração de subcircuitos com menores custos de comunicação entre partições. Este artigo apresenta uma arquitetura modular de computador quântico multi-QPU, assim como resultados com o particionamento hipergráfico de circuitos, como uma camada permanente em futuras arquiteturas de sistemas quânticos distribuídos.",
+        "authors": [
+          "Waldemir Cambiucci",
+          "Regina Melo Silveira",
+          "Wilson Vicente Ruggiero"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --bg-dark: #121212;
+  --bg-panel: rgba(28, 28, 30, 0.6);
+  --bg-panel-solid: #1c1c1e;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --border-color: rgba(58, 58, 60, 0.8);
+  --gradient-start: #00e0c6;
+  --gradient-end: #ad53ff;
+  --error-color: #f28b82;
+  --hover-bg: #3c4043;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Efeito de Gradiente para textos */
+.gradient-text {
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

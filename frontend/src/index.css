@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+
+:root {
+--font-sans: 'Inter', sans-serif;
+--bg-dark: #0f1112;
+--bg-panel: rgba(28, 28, 30, 0.55);
+--bg-panel-solid: #141416;
+--text-primary: #eef0f2;
+--text-secondary: #a9adb2;
+--border-color: rgba(58, 58, 60, 0.8);
+--gradient-start: #00e0c6;
+--gradient-end: #ad53ff;
+--accent-color: #8ab4f8;
+--error-color: #f28b82;
+--hover-bg: #222425;
+--glass-blur: 8px;
+}
+
+
+* { box-sizing: border-box; }
+body {
+margin: 0;
+font-family: var(--font-sans);
+background-color: var(--bg-dark);
+color: var(--text-primary);
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+
+.gradient-text {
+background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+color: transparent;
+}
+
+
+/* shared utilities */
+.container-center { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.small { font-size: 0.85rem; color: var(--text-secondary); }
+.btn { cursor: pointer; border: none; padding: 8px 12px; border-radius: 10px; font-weight: 600; }
+
+
+/* tiny responsive helpers */
+@media (max-width: 800px) {
+.container-center { padding: 0 12px; }
+}
