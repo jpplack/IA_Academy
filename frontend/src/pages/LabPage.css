@@ -5,7 +5,6 @@
   overflow: hidden;
 }
 
-/* --- Sidebar --- */
 .sidebar {
   width: 260px;
   background-color: var(--bg-panel-solid);
@@ -43,7 +42,6 @@
   border-color: var(--accent-color);
 }
 
-/* --- Conteúdo Principal --- */
 .main-content {
   flex-grow: 1;
   display: flex;
@@ -82,7 +80,6 @@
 .result-item a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
 .result-item a:hover { text-decoration: underline; }
 
-/* --- Barra de Input --- */
 .input-bar-container {
   position: absolute;
   bottom: 0;
@@ -121,7 +118,6 @@
 
 .menu-toggle { display: none; }
 
-/* --- Media Query para Responsividade --- */
 @media (max-width: 800px) {
     .sidebar {
         position: fixed;

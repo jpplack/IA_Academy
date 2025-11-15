@@ -12,7 +12,7 @@ const FuncionalidadesPage = () => {
           <li><strong>Histórico de Pesquisas:</strong> Salva suas buscas para que você nunca perca uma linha de pesquisa.</li>
           <li><strong>Arquitetura Moderna:</strong> Backend robusto em FastAPI e Frontend reativo com React + Vite.</li>
         </ul>
-        <a href="/lab" className="cta-button">Voltar ao Laboratório</a>
+        <a href="/" className="cta-button">Voltar ao Início</a>
       </div>
     </div>
   );

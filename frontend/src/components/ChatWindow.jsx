@@ -49,10 +49,18 @@ return (
 <h3>Resultados</h3>
 {activeSearch.resultados && activeSearch.resultados.map((res, idx) => (
 <div className="result-item" key={idx}>
-<h4>[{res.fonte}] {res.titulo}</h4>
+<h4>[{res.fonte}] 
+  {res.url ? (
+    <a href={res.url} target="_blank" rel="noreferrer" style={{color: 'inherit'}}>
+      {res.titulo}
+    </a>
+  ) : (
+    res.titulo
+  )}
+</h4>
 <p className="small">{res.authors ? (res.authors.join(', ')) : ''}</p>
 <p>{res.resumo}</p>
-{res.link && <a href={res.link} target="_blank" rel="noreferrer">Abrir fonte</a>}
+{<res className="url"></res> && <a href={res.url} target="_blank" rel="noreferrer">Abrir fonte</a>}
 </div>
 ))}
 </section>

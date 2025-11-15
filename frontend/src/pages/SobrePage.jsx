@@ -1,5 +1,5 @@
 import React from 'react';
-import './StaticPage.css'; // Usaremos um CSS compartilhado
+import './StaticPage.css';
 
 const SobrePage = () => {
   return (
@@ -12,7 +12,7 @@ const SobrePage = () => {
         <p>
           Nossa plataforma realiza buscas paralelas em múltiplas fontes de alta credibilidade (IEEE Xplore, Semantic Scholar, arXiv, Wikipedia, etc.) e utiliza o poder do Google Gemini para otimizar as perguntas e gerar resumos coesos em português, tornando a pesquisa mais rápida, intuitiva e eficiente.
         </p>
-        <a href="/lab" className="cta-button">Voltar ao Laboratório</a>
+        <a href="/" className="cta-button">Voltar ao Início</a>
       </div>
     </div>
   );

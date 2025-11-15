@@ -2,7 +2,7 @@
 
 
 .landing-container { display:flex; flex-direction:column; align-items:center; min-height:100vh; width:100%; }
-.landing-header { width:100%; max-width:1200px; display:flex; justify-content:space-between; align-items:center; padding:24px 0; border-bottom:1px solid var(--border-color); }
+.landing-header { width:100%; max-width:1200px; display:flex; justify-content:space-between; align-items:center; padding:20px 0; border-bottom:1px solid var(--border-color); }
 .logo { display:flex; align-items:center; font-size:1.2rem; }
 .landing-header nav a { margin:0 16px; text-decoration:none; color:var(--text-secondary); transition:color .15s; }
 .landing-header nav a:hover { color:var(--text-primary); }

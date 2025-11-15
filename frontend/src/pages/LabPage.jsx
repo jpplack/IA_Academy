@@ -1,11 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import './LabPage.css'; // Garanta que este arquivo CSS exista e esteja correto
-
+import './LabPage.css';
 import Sidebar from '../components/Sidebar';
 import ChatWindow from '../components/ChatWindow';
 import InputBar from '../components/InputBar';
 import { MenuIcon } from '../components/Icons';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function LabPage() {
   const [query, setQuery] = useState('');
@@ -14,17 +15,27 @@ function LabPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth > 800);
+  const { token, logout } = useAuth();
+  const navigate = useNavigate();
 
-  const API_URL = 'http://127.0.0.1:8080'; // Centralizamos a URL da API
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8080';
+  const authHeaders = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  };
 
   const fetchHistory = useCallback(async () => {
     try {
-      const response = await axios.get(`${API_URL}/historico`);
+      const response = await axios.get(`${API_URL}/historico`, authHeaders);
       setHistory(response.data);
     } catch (err) {
       console.error("Falha ao buscar histórico:", err);
+      if (err.response?.status === 401) {
+        logout();
+      }
     }
-  }, []);
+  }, [token, logout]);
 
   useEffect(() => {
     fetchHistory();
@@ -43,7 +54,7 @@ function LabPage() {
     try {
       const response = await axios.post(`${API_URL}/perguntar`, {
         texto: query
-      });
+      }, authHeaders); 
       
       const newSearch = {
         pergunta: query,
@@ -52,18 +63,20 @@ function LabPage() {
       };
       
       setActiveSearch(newSearch);
-      setHistory(prevHistory => [newSearch, ...prevHistory]); // Atualização otimista
+      setHistory(prevHistory => [newSearch, ...prevHistory]);
       
     } catch (err) {
-      const errorMsg = err.response?.data?.detail || 'Ocorreu um erro ao buscar os dados. Verifique o console.';
+      const errorMsg = err.response?.data?.detail || 'Ocorreu um erro ao buscar.';
       setError(errorMsg);
       console.error(err);
+      if (err.response?.status === 401) {
+        logout();
+      }
     } finally {
       setIsLoading(false);
       setQuery('');
     }
-  }, [query]);
-  
+  }, [query, token, logout]);
   const handleHistoryClick = useCallback((item) => {
     setActiveSearch({
         resumo_ia: item.resumo_ia,
@@ -75,15 +88,23 @@ function LabPage() {
   const handleClearHistory = useCallback(async () => {
     if (window.confirm("Você tem certeza que deseja limpar todo o histórico?")) {
       try {
-        await axios.delete(`${API_URL}/historico`);
+        await axios.delete(`${API_URL}/historico`, authHeaders);
         setHistory([]);
         setActiveSearch({ resumo_ia: '', resultados: [] });
       } catch (err) {
         setError("Não foi possível limpar o histórico.");
         console.error("Falha ao limpar histórico:", err);
+        if (err.response?.status === 401) {
+          logout();
+        }
       }
     }
-  }, []);
+  }, [token, logout]);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <div className="app-container">
@@ -91,6 +112,7 @@ function LabPage() {
         history={history}
         onHistoryClick={handleHistoryClick}
         onClearHistory={handleClearHistory}
+        onLogout={handleLogout}
         isOpen={isSidebarOpen}
       />
 

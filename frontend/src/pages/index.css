@@ -23,7 +23,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Efeito de Gradiente para textos */
 .gradient-text {
   background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
   -webkit-background-clip: text;
